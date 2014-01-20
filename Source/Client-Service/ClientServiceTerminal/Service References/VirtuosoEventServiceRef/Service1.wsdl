@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DistributedVirtuosoEventService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8000/VirtuosoEventService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8000/VirtuosoEventService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8000/VirtuosoEventService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VirtuosoEventService" />
+      <xsd:import namespace="http://www.w3.org/2001/XMLSchema" />
+      <xsd:import schemaLocation="http://localhost:8000/VirtuosoEventService?xsd=xsd3" namespace="http://tempuri.org/VirtuosoDataSet.xsd" />
+      <xsd:import schemaLocation="http://localhost:8000/VirtuosoEventService?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IVirtuosoEventService_GetTriples_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTriples" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_GetTriples_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTriplesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_GetTriple_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTriple" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_GetTriple_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTripleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_InsertTriple_InputMessage">
+    <wsdl:part name="graph" type="xsd:string" />
+    <wsdl:part name="subj" type="xsd:string" />
+    <wsdl:part name="pred" type="xsd:string" />
+    <wsdl:part name="obj" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_InsertTriple_OutputMessage" />
+  <wsdl:message name="IVirtuosoEventService_LogIn_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogIn" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_LogIn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogInResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_CreateNewAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewAccount" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_CreateNewAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_GetUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsers" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_GetUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_CollectEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:CollectEvents" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_CollectEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CollectEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_ResetUserpassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetUserpassword" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_ResetUserpassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetUserpasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_SetUserAccRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserAccRights" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_SetUserAccRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserAccRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_SetEventDefRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetEventDefRights" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_SetEventDefRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetEventDefRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_RegisterVirtuosoDB_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterVirtuosoDB" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_RegisterVirtuosoDB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterVirtuosoDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_CreateTrigger_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTrigger" />
+  </wsdl:message>
+  <wsdl:message name="IVirtuosoEventService_CreateTrigger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTriggerResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IVirtuosoEventService">
+    <wsdl:operation name="GetTriples">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVirtuosoEventService/GetTriples" message="tns:IVirtuosoEventService_GetTriples_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVirtuosoEventService/GetTriplesResponse" message="tns:IVirtuosoEventService_GetTriples_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTriple">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVirtuosoEventService/GetTriple" message="tns:IVirtuosoEventService_GetTriple_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVirtuosoEventService/GetTripleResponse" message="tns:IVirtuosoEventService_GetTriple_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTriple" parameterOrder="graph subj pred obj">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVirtuosoEventService/InsertTriple" message="tns:IVirtuosoEventService_InsertTriple_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVirtuosoEventService/InsertTripleResponse" message="tns:IVirtuosoEventService_InsertTriple_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogIn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVirtuosoEventService/LogIn" message="tns:IVirtuosoEventService_LogIn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVirtuosoEventService/LogInResponse" message="tns:IVirtuosoEventService_LogIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVirtuosoEventService/CreateNewAccount" message="tns:IVirtuosoEventService_CreateNewAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVirtuosoEventService/CreateNewAccountResponse" message="tns:IVirtuosoEventService_CreateNewAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVirtuosoEventService/GetUsers" message="tns:IVirtuosoEventService_GetUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVirtuosoEventService/GetUsersResponse" message="tns:IVirtuosoEventService_GetUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CollectEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVirtuosoEventService/CollectEvents" message="tns:IVirtuosoEventService_CollectEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVirtuosoEventService/CollectEventsResponse" message="tns:IVirtuosoEventService_CollectEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetUserpassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVirtuosoEventService/ResetUserpassword" message="tns:IVirtuosoEventService_ResetUserpassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVirtuosoEventService/ResetUserpasswordResponse" message="tns:IVirtuosoEventService_ResetUserpassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserAccRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVirtuosoEventService/SetUserAccRights" message="tns:IVirtuosoEventService_SetUserAccRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVirtuosoEventService/SetUserAccRightsResponse" message="tns:IVirtuosoEventService_SetUserAccRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEventDefRights">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVirtuosoEventService/SetEventDefRights" message="tns:IVirtuosoEventService_SetEventDefRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVirtuosoEventService/SetEventDefRightsResponse" message="tns:IVirtuosoEventService_SetEventDefRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterVirtuosoDB">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVirtuosoEventService/RegisterVirtuosoDB" message="tns:IVirtuosoEventService_RegisterVirtuosoDB_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVirtuosoEventService/RegisterVirtuosoDBResponse" message="tns:IVirtuosoEventService_RegisterVirtuosoDB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateTrigger">
+      <wsdl:input wsaw:Action="http://tempuri.org/IVirtuosoEventService/CreateTrigger" message="tns:IVirtuosoEventService_CreateTrigger_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IVirtuosoEventService/CreateTriggerResponse" message="tns:IVirtuosoEventService_CreateTrigger_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IVirtuosoEventService" type="tns:IVirtuosoEventService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="GetTriples">
+      <soap:operation soapAction="http://tempuri.org/IVirtuosoEventService/GetTriples" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTriple">
+      <soap:operation soapAction="http://tempuri.org/IVirtuosoEventService/GetTriple" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTriple">
+      <soap:operation soapAction="http://tempuri.org/IVirtuosoEventService/InsertTriple" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://tempuri.org/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://tempuri.org/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogIn">
+      <soap:operation soapAction="http://tempuri.org/IVirtuosoEventService/LogIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewAccount">
+      <soap:operation soapAction="http://tempuri.org/IVirtuosoEventService/CreateNewAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsers">
+      <soap:operation soapAction="http://tempuri.org/IVirtuosoEventService/GetUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CollectEvents">
+      <soap:operation soapAction="http://tempuri.org/IVirtuosoEventService/CollectEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetUserpassword">
+      <soap:operation soapAction="http://tempuri.org/IVirtuosoEventService/ResetUserpassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUserAccRights">
+      <soap:operation soapAction="http://tempuri.org/IVirtuosoEventService/SetUserAccRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetEventDefRights">
+      <soap:operation soapAction="http://tempuri.org/IVirtuosoEventService/SetEventDefRights" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterVirtuosoDB">
+      <soap:operation soapAction="http://tempuri.org/IVirtuosoEventService/RegisterVirtuosoDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateTrigger">
+      <soap:operation soapAction="http://tempuri.org/IVirtuosoEventService/CreateTrigger" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DistributedVirtuosoEventService">
+    <wsdl:port name="BasicHttpBinding_IVirtuosoEventService" binding="tns:BasicHttpBinding_IVirtuosoEventService">
+      <soap:address location="http://localhost:8000/VirtuosoEventService/VirtuosoEventEndpoint" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

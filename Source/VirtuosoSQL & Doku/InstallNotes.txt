@@ -1,0 +1,36 @@
+Install Event-Framework(Server) on Ubuntu:
+
+1. make the machine pingable by hostname (e.g. with Samba: http://that-matt.com/2009/12/02/how-to-get-ubuntu-to-ping-a-windows-hostname.html)
+2. download virtuoso 6.1.7 as .tar (http://sourceforge.net/projects/virtuoso/files/virtuoso/6.1.7/virtuoso-opensource-6.1.7.tar.gz/download?use_mirror=netcologne)
+   (virtuoso 6.1.7 is not available via 'apt-get'!)
+3. un-tar, build, configure and install virtuoso as described here: http://www.openlinksw.com/dataspace/doc/dav/wiki/Main/VOSUbuntuNotes#Building%20from%20Upstream%20Source
+4. install unixodbc (sudo apt-get install unixodbc-dev unixodbc-bin unixodbc)
+5. open /etc/odbc.ini (needs sudo!) and insert:
+[VOS]
+Driver		= /usr/lib/odbc/virtodbc.so   --replace this line with the actual position of virtodbc.so (e.g. /usr/virtuoso_installation_direcory/lib)
+Description		= Virtuoso OpenSource Edition
+Address		= localhost:1111			  --make sure port is the same as the virtuoso-isql-port
+
+6. install Mono (the complete package - sudo apt-get install mono-complete)
+(if neccessary: 7. install SystemServiceModel.dll + dependencies 
+         sudo apt-get install libmono-system-servicemodel4.0-cil
+   and - sudo apt-get install libmono2.0-cil)
+8. open /folder of EventFrameworkService/EventFrameworkService.exe.config and change the value of key="connectionString" to "Dsn=VOS;uid=dba;pwd=--dba password!--"
+9. run EventFrameworkService.exe (~mono EventFrameworkService.exe)
+10. Use the Conductor or ISQL and log in as DBA (id:dba, pw:--dba password!--)
+11. load or copy the content of file: CentralDB - Data.sql and execute
+12. load or copy the content of file: CentralDB - Procedures.sql and execute -> scroll to the end to check for instllation-errors
+13. start the Event-Framework-Control use username: Admin pw: admin to log in
+
+
+Install Satellite-Database (Virtuoso)
+
+important: Virtuoso 7.0.0 64 bit has a bug which causes every RDF-triple to be inserted twice. This version is therefor not recommanded! use Virtuoso 6.1.7 instead
+0. make the machine pingable by hostname!
+1. install Virtuoso : (Windows: http://www.openlinksw.com/dataspace/doc/dav/wiki/Main/VOSUsageWindows, Unix: http://www.openlinksw.com/dataspace/doc/dav/wiki/Main/VOSUbuntuNotes)
+2. Use the Conductor or ISQL and log in as DBA (id:dba, pw:--dba password!--)
+3. load or copy the content of file: Client - Data.sql and execute
+4. load or copy the content of file: Client - Procedures.sql and execute -> scroll to the end to check for instllation-errors
+5. copy the uri shown at the end of the previous step
+6. open the Event-Framework-Control -> log in (id: Admin, pw: admin)
+7. goto Datasources -> insert uri in endpoint address text-box -> select 'Virtuoso' as type of database -> fill out the rest -> click 'submit new database'

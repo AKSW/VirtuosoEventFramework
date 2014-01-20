@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59E1FE62-818C-47DE-8BD0-F118ABCFC775}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EventFrameworkControl</RootNamespace>
+    <AssemblyName>EventFrameworkControl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Mono</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>EventFrameworkControl.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DynamicProxy">
+      <HintPath>..\..\..\WCFDynamicProxy\src\bin\Debug\DynamicProxy.dll</HintPath>
+    </Reference>
+    <Reference Include="EventOntology">
+      <HintPath>..\..\EventOntology\bin\Debug\EventOntology.dll</HintPath>
+    </Reference>
+    <Reference Include="RdfEventClients-AdminTool, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <ExecutableExtension>.exe</ExecutableExtension>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ECA\Actions&amp;Conditions\ActionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECA\Actions&amp;Conditions\ActionsControl.Designer.cs">
+      <DependentUpon>ActionsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECA\Actions&amp;Conditions\ActionSelectControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECA\Actions&amp;Conditions\ActionSelectControl.Designer.cs">
+      <DependentUpon>ActionSelectControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForm.Designer.cs">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECA\Actions&amp;Conditions\SelectQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ECA\Actions&amp;Conditions\SelectQuery.Designer.cs">
+      <DependentUpon>SelectQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECA\ComplexEvents\ComplexEventControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECA\ComplexEvents\ComplexEventControl.Designer.cs">
+      <DependentUpon>ComplexEventControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECA\Actions&amp;Conditions\ConditionsQueryControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECA\Actions&amp;Conditions\ConditionsQueryControl.Designer.cs">
+      <DependentUpon>ConditionsQueryControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECA\ComplexEvents\EventSetControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECA\ComplexEvents\EventSetControl.Designer.cs">
+      <DependentUpon>EventSetControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmPassword.Designer.cs">
+      <DependentUpon>ConfirmPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECA\AtomicEvents\AtomicEventControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECA\AtomicEvents\AtomicEventControl.Designer.cs">
+      <DependentUpon>AtomicEventControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECA\Actions&amp;Conditions\CreateAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ECA\Actions&amp;Conditions\CreateAction.Designer.cs">
+      <DependentUpon>CreateAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECA\AtomicEvents\CreateRdfEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ECA\AtomicEvents\CreateRdfEvent.Designer.cs">
+      <DependentUpon>CreateRdfEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECA\AtomicEvents\CreateRegisterEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ECA\AtomicEvents\CreateRegisterEvents.Designer.cs">
+      <DependentUpon>CreateRegisterEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECA\ComplexEvents\InstancesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ECA\ComplexEvents\InstancesControl.Designer.cs">
+      <DependentUpon>InstancesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewAccount.Designer.cs">
+      <DependentUpon>NewAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ECA\Actions&amp;Conditions\ParameterMapping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ECA\Actions&amp;Conditions\ParameterMapping.Designer.cs">
+      <DependentUpon>ParameterMapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ECA\AtomicEvents\RegisterAtomicEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ECA\AtomicEvents\RegisterAtomicEvent.Designer.cs">
+      <DependentUpon>RegisterAtomicEvent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaticHelper.cs" />
+    <Compile Include="ECA\Actions&amp;Conditions\TestAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ECA\Actions&amp;Conditions\TestAction.Designer.cs">
+      <DependentUpon>TestAction.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ECA\Actions&amp;Conditions\ActionsControl.resx">
+      <DependentUpon>ActionsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECA\Actions&amp;Conditions\ActionSelectControl.resx">
+      <DependentUpon>ActionSelectControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForm.resx">
+      <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECA\Actions&amp;Conditions\SelectQuery.resx">
+      <DependentUpon>SelectQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECA\ComplexEvents\ComplexEventControl.resx">
+      <DependentUpon>ComplexEventControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECA\Actions&amp;Conditions\ConditionsQueryControl.resx">
+      <DependentUpon>ConditionsQueryControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECA\ComplexEvents\EventSetControl.resx">
+      <DependentUpon>EventSetControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmPassword.resx">
+      <DependentUpon>ConfirmPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECA\AtomicEvents\AtomicEventControl.resx">
+      <DependentUpon>AtomicEventControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECA\Actions&amp;Conditions\CreateAction.resx">
+      <DependentUpon>CreateAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECA\AtomicEvents\CreateRdfEvent.resx">
+      <DependentUpon>CreateRdfEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECA\AtomicEvents\CreateRegisterEvents.resx">
+      <DependentUpon>CreateRegisterEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECA\ComplexEvents\InstancesControl.resx">
+      <DependentUpon>InstancesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewAccount.resx">
+      <DependentUpon>NewAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECA\Actions&amp;Conditions\ParameterMapping.resx">
+      <DependentUpon>ParameterMapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ECA\AtomicEvents\RegisterAtomicEvent.resx">
+      <DependentUpon>RegisterAtomicEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ECA\Actions&amp;Conditions\TestAction.resx">
+      <DependentUpon>TestAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\RdfEventClientServiceLib.VirtuosoEventServiceRef.VirtuosoDataSet.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tabNavSkos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonPressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonState.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonStatePressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newEventSoapRequest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

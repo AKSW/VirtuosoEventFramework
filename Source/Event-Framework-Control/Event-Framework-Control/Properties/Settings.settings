@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EventFrameworkControl.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="netPipeAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">net.pipe://WIN-N26JO1512TH/EventServiceProxy</Value>
+    </Setting>
+    <Setting Name="netTcpAddress" Type="System.String" Scope="User">
+      <Value Profile="(Default)">net.tcp://WIN-N26JO1512TH:1234/EventServiceProxy</Value>
+    </Setting>
+    <Setting Name="atomicEvViewCols" Type="System.String" Scope="User">
+      <Value Profile="(Default)">DSInstance, TriggerID, TriggerType, TriggerName, Description, Statement, InternalSource, Values, CreatedBy</Value>
+    </Setting>
+    <Setting Name="actionViewCols" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ActionID, WsdlAddress, MethodeName, Description, ParamDescr, ReturnDescr, SparqlQuery, CreatedBy</Value>
+    </Setting>
+    <Setting Name="complexEvViewCols" Type="System.String" Scope="User">
+      <Value Profile="(Default)">CEID, Name, Description, IsActive, IsOverlapping, Period, Recurrences</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

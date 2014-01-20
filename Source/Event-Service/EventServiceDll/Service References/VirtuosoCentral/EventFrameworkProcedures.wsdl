@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:dl="services.wsdl" xmlns:tns="http://localhost:8890/EventFrameworkProcedures/services.wsdl" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:dime="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:content="http://schemas.xmlsoap.org/ws/2002/04/content-type/" xmlns:ref="http://schemas.xmlsoap.org/ws/2002/04/reference/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns0="services.wsdl" name="EventFrameworkProcedures" targetNamespace="http://localhost:8890/EventFrameworkProcedures/services.wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="services.wsdl">
+      <xsd:complexType name="EVENT_FRAMEWORK_INTERNAL_SPARQL_Response_t">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="ns0:EVENT_FRAMEWORK_INTERNAL_SPARQL_Response_t_item_t" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EVENT_FRAMEWORK_INTERNAL_SPARQL_Response_t_item_t">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EVENT_FRAMEWORK_GET_GRAPHS_Response_t">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE_Response_t">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLE_Response_t">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EVENT_FRAMEWORK_TEST_SQL_CONDITION_Response_t">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="ns0:EVENT_FRAMEWORK_TEST_SQL_CONDITION_Response_t_item_t" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EVENT_FRAMEWORK_TEST_SQL_CONDITION_Response_t_item_t">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="EVENT_FRAMEWORK_GET_SCHEMA_TABLES_Response_t">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="EVENT_FRAMEWORK_INSERT_NEW_EVENT">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="dsInstance" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="internalSource" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="name" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="occ" type="xsd:dateTime" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="rowVector" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="ceid" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="trigg" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_INSERT_NEW_EVENTResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_GET_SCHEMA_TABLES">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="controlID" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_GET_SCHEMA_TABLESResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="ns0:EVENT_FRAMEWORK_GET_SCHEMA_TABLES_Response_t" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ERR_MAIL_SEND">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="_tgt" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="_urls" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="_root" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="_stat" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="_msg" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ERR_MAIL_SENDResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTS">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="controlID" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="tablename" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="triggername" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_INSERT_TTL_DATA">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="controlID" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="ttl" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="graph" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="filePath" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="filePathFrom" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="filePathTo" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_INSERT_TTL_DATAResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VFS_ROBOTS_GET">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="_host" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="_root" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="site_delay_sec" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VFS_ROBOTS_GETResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="site_delay_sec" type="xsd:double" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_SPARQL_TO_SQL">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="syntax" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_SPARQL_TO_SQLResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_TEST_SQL_CONDITION">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="executeQuerry" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="ns0:EVENT_FRAMEWORK_TEST_SQL_CONDITION_Response_t" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_DROP_TRIGGER">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="controlID" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="triggername" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_DROP_TRIGGERResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_GET_NEXT_ID">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="tablename" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="idColumn" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_GET_NEXT_IDResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:int" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="controlID" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="tableName" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLEResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="ns0:EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLE_Response_t" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VFS_ROBOTS_PARSE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="txt" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="ua" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="VFS_ROBOTS_PARSEResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="delay_sec" type="xsd:double" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_REGISTER_DB">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="controlID" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="dbInstance" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="endpointAdd" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="thisEndpoint" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_REGISTER_DBResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_GET_TRIGGER_SYNTAX">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="controlID" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="tablename" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="triggername" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_SET_NEW_TRIGGER">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="controlID" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="triggerStatement" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="tableName" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="triggerName" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="triggerType" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="condition" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="paramArray" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_SET_NEW_TRIGGERResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_INSERT_CONSTANT">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="controlID" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="keyV" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="valueV" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_INSERT_CONSTANTResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="xsd:string" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="controlID" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="tablename" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLEResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="ns0:EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE_Response_t" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_GET_GRAPHS">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="controlID" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_GET_GRAPHSResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="ns0:EVENT_FRAMEWORK_GET_GRAPHS_Response_t" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_INTERNAL_SPARQL">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="controlID" type="xsd:int" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="executeQuerry" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="EVENT_FRAMEWORK_INTERNAL_SPARQLResponse">
+        <xsd:complexType>
+          <xsd:all>
+            <xsd:element minOccurs="1" maxOccurs="1" name="CallReturn" type="ns0:EVENT_FRAMEWORK_INTERNAL_SPARQL_Response_t" />
+          </xsd:all>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="EVENT_FRAMEWORK_INSERT_NEW_EVENTRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_INSERT_NEW_EVENT" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_INSERT_NEW_EVENTResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_INSERT_NEW_EVENTResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_GET_SCHEMA_TABLESRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_GET_SCHEMA_TABLES" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_GET_SCHEMA_TABLESResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_GET_SCHEMA_TABLESResponse" />
+  </wsdl:message>
+  <wsdl:message name="ERR_MAIL_SENDRequest">
+    <wsdl:part name="parameters" element="ns0:ERR_MAIL_SEND" />
+  </wsdl:message>
+  <wsdl:message name="ERR_MAIL_SENDResponse">
+    <wsdl:part name="parameters" element="ns0:ERR_MAIL_SENDResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTS" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_INSERT_TTL_DATARequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_INSERT_TTL_DATA" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_INSERT_TTL_DATAResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_INSERT_TTL_DATAResponse" />
+  </wsdl:message>
+  <wsdl:message name="VFS_ROBOTS_GETRequest">
+    <wsdl:part name="parameters" element="ns0:VFS_ROBOTS_GET" />
+  </wsdl:message>
+  <wsdl:message name="VFS_ROBOTS_GETResponse">
+    <wsdl:part name="parameters" element="ns0:VFS_ROBOTS_GETResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_SPARQL_TO_SQLRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_SPARQL_TO_SQL" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_SPARQL_TO_SQLResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_SPARQL_TO_SQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_TEST_SQL_CONDITION" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_TEST_SQL_CONDITIONResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_DROP_TRIGGERRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_DROP_TRIGGER" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_DROP_TRIGGERResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_DROP_TRIGGERResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_GET_NEXT_IDRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_GET_NEXT_ID" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_GET_NEXT_IDResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_GET_NEXT_IDResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLERequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLE" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLEResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLEResponse" />
+  </wsdl:message>
+  <wsdl:message name="VFS_ROBOTS_PARSERequest">
+    <wsdl:part name="parameters" element="ns0:VFS_ROBOTS_PARSE" />
+  </wsdl:message>
+  <wsdl:message name="VFS_ROBOTS_PARSEResponse">
+    <wsdl:part name="parameters" element="ns0:VFS_ROBOTS_PARSEResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_REGISTER_DBRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_REGISTER_DB" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_REGISTER_DBResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_REGISTER_DBResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_GET_TRIGGER_SYNTAX" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_SET_NEW_TRIGGERRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_SET_NEW_TRIGGER" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_SET_NEW_TRIGGERResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_SET_NEW_TRIGGERResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_INSERT_CONSTANTRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_INSERT_CONSTANT" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_INSERT_CONSTANTResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_INSERT_CONSTANTResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLERequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLEResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLEResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_GET_GRAPHSRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_GET_GRAPHS" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_GET_GRAPHSResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_GET_GRAPHSResponse" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_INTERNAL_SPARQLRequest">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_INTERNAL_SPARQL" />
+  </wsdl:message>
+  <wsdl:message name="EVENT_FRAMEWORK_INTERNAL_SPARQLResponse">
+    <wsdl:part name="parameters" element="ns0:EVENT_FRAMEWORK_INTERNAL_SPARQLResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EventFrameworkProceduresDocLiteralPortType">
+    <wsdl:operation name="EVENT_FRAMEWORK_INSERT_NEW_EVENT">
+      <wsdl:input name="EVENT_FRAMEWORK_INSERT_NEW_EVENTRequest" message="tns:EVENT_FRAMEWORK_INSERT_NEW_EVENTRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_INSERT_NEW_EVENTResponse" message="tns:EVENT_FRAMEWORK_INSERT_NEW_EVENTResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_GET_SCHEMA_TABLES">
+      <wsdl:input name="EVENT_FRAMEWORK_GET_SCHEMA_TABLESRequest" message="tns:EVENT_FRAMEWORK_GET_SCHEMA_TABLESRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_GET_SCHEMA_TABLESResponse" message="tns:EVENT_FRAMEWORK_GET_SCHEMA_TABLESResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ERR_MAIL_SEND">
+      <wsdl:input name="ERR_MAIL_SENDRequest" message="tns:ERR_MAIL_SENDRequest" />
+      <wsdl:output name="ERR_MAIL_SENDResponse" message="tns:ERR_MAIL_SENDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTS">
+      <wsdl:input name="EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSRequest" message="tns:EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSResponse" message="tns:EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_INSERT_TTL_DATA">
+      <wsdl:input name="EVENT_FRAMEWORK_INSERT_TTL_DATARequest" message="tns:EVENT_FRAMEWORK_INSERT_TTL_DATARequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_INSERT_TTL_DATAResponse" message="tns:EVENT_FRAMEWORK_INSERT_TTL_DATAResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="VFS_ROBOTS_GET">
+      <wsdl:input name="VFS_ROBOTS_GETRequest" message="tns:VFS_ROBOTS_GETRequest" />
+      <wsdl:output name="VFS_ROBOTS_GETResponse" message="tns:VFS_ROBOTS_GETResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_SPARQL_TO_SQL">
+      <wsdl:input name="EVENT_FRAMEWORK_SPARQL_TO_SQLRequest" message="tns:EVENT_FRAMEWORK_SPARQL_TO_SQLRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_SPARQL_TO_SQLResponse" message="tns:EVENT_FRAMEWORK_SPARQL_TO_SQLResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_TEST_SQL_CONDITION">
+      <wsdl:input name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONRequest" message="tns:EVENT_FRAMEWORK_TEST_SQL_CONDITIONRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONResponse" message="tns:EVENT_FRAMEWORK_TEST_SQL_CONDITIONResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_DROP_TRIGGER">
+      <wsdl:input name="EVENT_FRAMEWORK_DROP_TRIGGERRequest" message="tns:EVENT_FRAMEWORK_DROP_TRIGGERRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_DROP_TRIGGERResponse" message="tns:EVENT_FRAMEWORK_DROP_TRIGGERResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_GET_NEXT_ID">
+      <wsdl:input name="EVENT_FRAMEWORK_GET_NEXT_IDRequest" message="tns:EVENT_FRAMEWORK_GET_NEXT_IDRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_GET_NEXT_IDResponse" message="tns:EVENT_FRAMEWORK_GET_NEXT_IDResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLE">
+      <wsdl:input name="EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLERequest" message="tns:EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLERequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLEResponse" message="tns:EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLEResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="VFS_ROBOTS_PARSE">
+      <wsdl:input name="VFS_ROBOTS_PARSERequest" message="tns:VFS_ROBOTS_PARSERequest" />
+      <wsdl:output name="VFS_ROBOTS_PARSEResponse" message="tns:VFS_ROBOTS_PARSEResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_REGISTER_DB">
+      <wsdl:input name="EVENT_FRAMEWORK_REGISTER_DBRequest" message="tns:EVENT_FRAMEWORK_REGISTER_DBRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_REGISTER_DBResponse" message="tns:EVENT_FRAMEWORK_REGISTER_DBResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_GET_TRIGGER_SYNTAX">
+      <wsdl:input name="EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXRequest" message="tns:EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXResponse" message="tns:EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_SET_NEW_TRIGGER">
+      <wsdl:input name="EVENT_FRAMEWORK_SET_NEW_TRIGGERRequest" message="tns:EVENT_FRAMEWORK_SET_NEW_TRIGGERRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_SET_NEW_TRIGGERResponse" message="tns:EVENT_FRAMEWORK_SET_NEW_TRIGGERResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_INSERT_CONSTANT">
+      <wsdl:input name="EVENT_FRAMEWORK_INSERT_CONSTANTRequest" message="tns:EVENT_FRAMEWORK_INSERT_CONSTANTRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_INSERT_CONSTANTResponse" message="tns:EVENT_FRAMEWORK_INSERT_CONSTANTResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE">
+      <wsdl:input name="EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLERequest" message="tns:EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLERequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLEResponse" message="tns:EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLEResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_GET_GRAPHS">
+      <wsdl:input name="EVENT_FRAMEWORK_GET_GRAPHSRequest" message="tns:EVENT_FRAMEWORK_GET_GRAPHSRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_GET_GRAPHSResponse" message="tns:EVENT_FRAMEWORK_GET_GRAPHSResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_INTERNAL_SPARQL">
+      <wsdl:input name="EVENT_FRAMEWORK_INTERNAL_SPARQLRequest" message="tns:EVENT_FRAMEWORK_INTERNAL_SPARQLRequest" />
+      <wsdl:output name="EVENT_FRAMEWORK_INTERNAL_SPARQLResponse" message="tns:EVENT_FRAMEWORK_INTERNAL_SPARQLResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EventFrameworkProceduresDocLiteralBinding" type="tns:EventFrameworkProceduresDocLiteralPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="EVENT_FRAMEWORK_INSERT_NEW_EVENT">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_INSERT_NEW_EVENT" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_INSERT_NEW_EVENTRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_INSERT_NEW_EVENTResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_GET_SCHEMA_TABLES">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_GET_SCHEMA_TABLES" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_GET_SCHEMA_TABLESRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_GET_SCHEMA_TABLESResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ERR_MAIL_SEND">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#ERR_MAIL_SEND" style="document" />
+      <wsdl:input name="ERR_MAIL_SENDRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="ERR_MAIL_SENDResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTS">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTS" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_CHECK_TRIGGER_EXISTSResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_INSERT_TTL_DATA">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_INSERT_TTL_DATA" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_INSERT_TTL_DATARequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_INSERT_TTL_DATAResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VFS_ROBOTS_GET">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#VFS_ROBOTS_GET" style="document" />
+      <wsdl:input name="VFS_ROBOTS_GETRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VFS_ROBOTS_GETResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_SPARQL_TO_SQL">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_SPARQL_TO_SQL" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_SPARQL_TO_SQLRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_SPARQL_TO_SQLResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_TEST_SQL_CONDITION">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_TEST_SQL_CONDITION" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_TEST_SQL_CONDITIONResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_DROP_TRIGGER">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_DROP_TRIGGER" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_DROP_TRIGGERRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_DROP_TRIGGERResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_GET_NEXT_ID">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_GET_NEXT_ID" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_GET_NEXT_IDRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_GET_NEXT_IDResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLE">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLE" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLERequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_GET_COLUMNS_OF_TABLEResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VFS_ROBOTS_PARSE">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#VFS_ROBOTS_PARSE" style="document" />
+      <wsdl:input name="VFS_ROBOTS_PARSERequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="VFS_ROBOTS_PARSEResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_REGISTER_DB">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_REGISTER_DB" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_REGISTER_DBRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_REGISTER_DBResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_GET_TRIGGER_SYNTAX">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_GET_TRIGGER_SYNTAX" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_GET_TRIGGER_SYNTAXResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_SET_NEW_TRIGGER">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_SET_NEW_TRIGGER" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_SET_NEW_TRIGGERRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_SET_NEW_TRIGGERResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_INSERT_CONSTANT">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_INSERT_CONSTANT" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_INSERT_CONSTANTRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_INSERT_CONSTANTResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLE" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLERequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_GET_TRIGGERS_OF_TABLEResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_GET_GRAPHS">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_GET_GRAPHS" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_GET_GRAPHSRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_GET_GRAPHSResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EVENT_FRAMEWORK_INTERNAL_SPARQL">
+      <soap:operation soapAction="http://openlinksw.com/virtuoso/soap/schema#EVENT_FRAMEWORK_INTERNAL_SPARQL" style="document" />
+      <wsdl:input name="EVENT_FRAMEWORK_INTERNAL_SPARQLRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="EVENT_FRAMEWORK_INTERNAL_SPARQLResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EventFrameworkProcedures">
+    <documentation>Virtuoso SOAP services</documentation>
+    <wsdl:port name="EventFrameworkProceduresDocLiteralPort" binding="tns:EventFrameworkProceduresDocLiteralBinding">
+      <soap:address location="http://localhost:8890/EventFrameworkProcedures" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

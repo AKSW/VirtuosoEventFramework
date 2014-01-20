@@ -1,0 +1,30 @@
+<?xml version='1.0' ?>
+<!--to publish an event to the event-framework, send this SOAP-Request-Message to the following endpoint:
+##endpoint##
+If successful, this function-call will return <CallReturn>1</CallReturn>, else <CallReturn>0</CallReturn>.-->
+<SOAP:Envelope
+ xmlns:xsi='http://www.w3.org/1999/XMLSchema-instance'
+ xmlns:xsd='http://www.w3.org/1999/XMLSchema'
+ xmlns:SOAP='urn:schemas-xmlsoap-org:soap.v1'
+ xmlns:dt='urn:schemas-microsoft-com:datatypes'>
+	<SOAP:Body>
+		<cli:EVENT_FRAMEWORK_INSERT_NEW_EVENT xmlns:cli='services.wsdl' >
+			<!--do not touch this value-->
+			<dsInstance>2</dsInstance>
+      <!--use this field if you want to further differentiate between instances of this atomic event-->
+			<internalSource/>
+			<!--do not touch this value-->
+			<name>INSERTTRIGGER_2_A_TEST_TABLE_1</name>
+			<!--Enter a different occurence-time in this format: <occ>2013-12-13T23:01:22.000002+01:00</occ>. 
+          Otherwise the moment of receiving this message is taken as the occurence-time.-->
+			<occ/>
+			<!--This array will represent all values (as string) of this event, and can be accessed via event-value-mapping.
+				  It might be appended by adding additional tags of this format: <variant>something</variant>-->
+			<rowVector>
+				<variant>enter</variant>
+				<variant>something</variant>
+				<variant>here</variant>
+			</rowVector>
+		</cli:EVENT_FRAMEWORK_INSERT_NEW_EVENT>
+	</SOAP:Body>
+</SOAP:Envelope>

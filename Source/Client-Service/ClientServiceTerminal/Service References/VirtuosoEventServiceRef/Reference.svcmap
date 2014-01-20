@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8e171f1c-289e-41f4-a994-a496b247e302" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/VirtuosoEventService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="VirtuosoDataSet.xsd" MetadataType="Schema" ID="d2724fe4-2e36-4214-979e-dfe4a5e58d3d" SourceId="1" SourceUrl="http://localhost:8000/VirtuosoEventService?xsd=xsd3" />
+    <MetadataFile FileName="VirtuosoEventService.xsd" MetadataType="Schema" ID="c3dbde1a-6ca1-410f-ad05-bf0a6ad9a321" SourceId="1" SourceUrl="http://localhost:8000/VirtuosoEventService?xsd=xsd2" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="a3d968b7-44c6-4fb3-be57-74d38637aa88" SourceId="1" SourceUrl="http://localhost:8000/VirtuosoEventService?wsdl" />
+    <MetadataFile FileName="VirtuosoEventService.disco" MetadataType="Disco" ID="90d4fa6d-6d09-4cba-818b-576a042558fa" SourceId="1" SourceUrl="http://localhost:8000/VirtuosoEventService?disco" />
+    <MetadataFile FileName="VirtuosoEventService1.xsd" MetadataType="Schema" ID="ca62baaa-43d6-4e7b-9b21-333c7cea98dd" SourceId="1" SourceUrl="http://localhost:8000/VirtuosoEventService?xsd=xsd0" />
+    <MetadataFile FileName="VirtuosoEventService2.xsd" MetadataType="Schema" ID="0022ee0f-0d27-44f3-9e0d-a6b09024d3ad" SourceId="1" SourceUrl="http://localhost:8000/VirtuosoEventService?xsd=xsd1" />
+    <MetadataFile FileName="VirtuosoEventService3.xsd" MetadataType="Schema" ID="aaa9b7a3-6ad5-43f5-8186-a7bcd61f4364" SourceId="1" SourceUrl="http://localhost:8000/VirtuosoEventService?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
